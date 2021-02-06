@@ -11,7 +11,7 @@ class IsDateTimeWorkTimeValidatorTest extends TestCase
     public function testSuccessful()
     {
         $minDateTime = new \DateTimeImmutable('11.11.2011 06:00:00');
-        $maxDateTime = new \DateTimeImmutable('11.11.2011 22:00:00');
+        $maxDateTime = new \DateTimeImmutable('11.11.2011 21:59:59');
 
         $validator = new IsDateTimeWorkTimeValidator();
 
@@ -24,7 +24,7 @@ class IsDateTimeWorkTimeValidatorTest extends TestCase
         $this->expectException(DateTimeIsNotWorkTimeException::class);
 
         $minDateTime = new \DateTimeImmutable('11.11.2011 05:59:59');
-        $maxDateTime = new \DateTimeImmutable('11.11.2011 22:00:01');
+        $maxDateTime = new \DateTimeImmutable('11.11.2011 22:00:00');
 
         $validator = new IsDateTimeWorkTimeValidator();
 

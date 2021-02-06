@@ -7,7 +7,7 @@ use Meals\Application\Component\Validator\Exception\DateTimeIsNotWorkTimeExcepti
 class IsDateTimeWorkTimeValidator implements DateTimeValidatorInterface
 {
     const SIX_AM = 60000;
-    const TEN_PM = 220000;
+    const TEN_PM = 215959;
 
     /**
      * @param \DateTimeInterface $dateTime
