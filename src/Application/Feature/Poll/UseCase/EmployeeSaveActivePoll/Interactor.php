@@ -97,14 +97,6 @@ class Interactor
     }
 
     /**
-     * @return DateTimeValidatorCollection
-     */
-    public function getDateTimeValidatorCollection(): DateTimeValidatorCollection
-    {
-        return $this->dateTimeValidatorCollection;
-    }
-
-    /**
      * @param DateTimeValidatorCollection $dateTimeValidatorCollection
      */
     public function setDateTimeValidatorCollection(DateTimeValidatorCollection $dateTimeValidatorCollection): void

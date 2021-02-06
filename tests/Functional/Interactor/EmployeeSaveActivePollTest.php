@@ -2,6 +2,7 @@
 
 namespace tests\Meals\Functional\Interactor;
 
+use Meals\Application\Component\Validator\DateTimeValidatorCollection;
 use Meals\Application\Component\Validator\Exception\AccessDeniedException;
 use Meals\Application\Component\Validator\Exception\DateTimeIsNotAMondayException;
 use Meals\Application\Component\Validator\Exception\DateTimeIsNotWorkTimeException;
@@ -152,7 +153,7 @@ class EmployeeSaveActivePollTest extends FunctionalTestCase
 
         /** @var Interactor $interactor */
         $interactor = $this->getContainer()->get(Interactor::class);
-        $dateTimeConstraint = $interactor->getDateTimeValidatorCollection();
+        $dateTimeConstraint = $this->getContainer()->get(DateTimeValidatorCollection::class);
         $dateTimeConstraint->setDateTimeToValidate($timeOfRequest);
         $interactor->setDateTimeValidatorCollection($dateTimeConstraint);
 
