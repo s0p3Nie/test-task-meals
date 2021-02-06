@@ -67,7 +67,8 @@ class Interactor
         DishIncludedInDishListValidator $dishInDishListValidator,
         UserHasAccessToParticipatePollsValidator $userHasAccessToParticipatePollsValidator,
         PollIsActiveValidator $pollIsActiveValidator
-    ) {
+    )
+    {
         $this->dishProvider = $dishProvider;
         $this->employeeProvider = $employeeProvider;
         $this->pollProvider = $pollProvider;
@@ -86,15 +87,10 @@ class Interactor
         $dish = $this->dishProvider->getDish($dishId);
         $activePollResults = $this->pollResultProvider->getActivePollResults();
 
-        // плохое время для метода •
         $this->dateTimeValidatorCollection->validate();
-        // нет прав •
         $this->userHasAccessToParticipatePollsValidator->validate($employee->getUser());
-        // пользователь уже создавал заказ •
         $this->canEmployeeCreateNewPollResultValidator->validate($activePollResults, $employee);
-        // Опрос не активен •
         $this->pollIsActiveValidator->validate($poll);
-        // Выбрано кривое блюда
         $this->dishInDishListValidator->validate($poll->getMenu()->getDishes(), $dish);
 
         return $this->pollResultProvider->createNewPollResult($poll, $employee, $dish);

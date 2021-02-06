@@ -8,7 +8,6 @@ use Meals\Domain\Dish\Dish;
 use Meals\Domain\Dish\DishList;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
 
 class DishIncludedInDishListValidatorTest extends TestCase
 {
@@ -16,11 +15,9 @@ class DishIncludedInDishListValidatorTest extends TestCase
 
     public function testSuccessful()
     {
-        /** @var Dish|ObjectProphecy $dish */
         $dish = $this->prophesize(Dish::class);
-
-        /** @var DishList|ObjectProphecy $dishList */
         $dishList = $this->prophesize(DishList::class);
+
         $dishList->hasDish($dish->reveal())->willReturn(true);
 
         $validator = new DishIncludedInDishListValidator();
@@ -31,11 +28,9 @@ class DishIncludedInDishListValidatorTest extends TestCase
     {
         $this->expectException(DishNotIncludedInDshListException::class);
 
-        /** @var Dish|ObjectProphecy $dish */
         $dish = $this->prophesize(Dish::class);
-
-        /** @var DishList|ObjectProphecy $dishList */
         $dishList = $this->prophesize(DishList::class);
+
         $dishList->hasDish($dish->reveal())->willReturn(false);
 
         $validator = new DishIncludedInDishListValidator();

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Meals\Application\Component\Validator;
-
 
 use Meals\Application\Component\Validator\Exception\AccessDeniedException;
 use Meals\Domain\User\Permission\Permission;

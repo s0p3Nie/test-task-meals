@@ -9,7 +9,7 @@ class IsDateTimeMondayValidator implements DateTimeValidatorInterface
     /**
      * @param \DateTimeInterface $dateTime
      */
-    public function validate(\DateTimeInterface $dateTime)
+    public function validate(\DateTimeInterface $dateTime): void
     {
         if ('Mon' !== $dateTime->format('D')) {
             throw new DateTimeIsNotAMondayException();

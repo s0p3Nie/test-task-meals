@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Meals\Application\Component\Validator;
 
 use Meals\Application\Component\Validator\Exception\DateTimeIsNotWorkTimeException;
@@ -13,10 +12,10 @@ class IsDateTimeWorkTimeValidator implements DateTimeValidatorInterface
     /**
      * @param \DateTimeInterface $dateTime
      */
-    public function validate(\DateTimeInterface $dateTime)
+    public function validate(\DateTimeInterface $dateTime): void
     {
         // format time '03:12:56 '-> '031256', casting to Int '031256' -> 31256
-        $currentTimeInt = (int) $dateTime->format('His');
+        $currentTimeInt = (int)$dateTime->format('His');
         if (self::SIX_AM > $currentTimeInt || self::TEN_PM < $currentTimeInt) {
             throw new DateTimeIsNotWorkTimeException();
         }

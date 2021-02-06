@@ -8,7 +8,7 @@ use Meals\Domain\User\Permission\Permission;
 
 class UserHasAccessToViewPollsValidatorValidatorTest extends BaseUserPollAccessValidatorTest
 {
-    protected function  getPermission(): string
+    protected function getPermission(): string
     {
         return Permission::VIEW_ACTIVE_POLLS;
     }

@@ -19,7 +19,8 @@ class DateTimeValidatorCollection
     public function __construct(
         IsDateTimeMondayValidator $dateTimeMondayValidator,
         IsDateTimeWorkTimeValidator $dateTimeWorkTimeValidator
-    ) {
+    )
+    {
         $this->dateTimeValidators[] = $dateTimeMondayValidator;
         $this->dateTimeValidators[] = $dateTimeWorkTimeValidator;
         // set NOW() by default

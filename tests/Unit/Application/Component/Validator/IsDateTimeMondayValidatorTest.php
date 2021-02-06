@@ -1,8 +1,6 @@
 <?php
 
-
 namespace tests\Meals\Unit\Application\Component\Validator;
-
 
 use Meals\Application\Component\Validator\Exception\DateTimeIsNotAMondayException;
 use Meals\Application\Component\Validator\IsDateTimeMondayValidator;

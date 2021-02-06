@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Meals\Application\Component\Validator;
 
 use Assert\Assertion;
@@ -12,9 +11,9 @@ class CanEmployeeCreateNewPollResultValidator
 {
     /**
      * @param PollResult[] $pollResultList
-     * @param Employee     $employee
+     * @param Employee $employee
      */
-    public function validate(array $pollResultList, Employee $employee)
+    public function validate(array $pollResultList, Employee $employee): void
     {
         Assertion::allIsInstanceOf($pollResultList, PollResult::class);
         foreach ($pollResultList as $pollResult) {

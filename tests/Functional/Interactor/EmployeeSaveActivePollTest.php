@@ -143,7 +143,8 @@ class EmployeeSaveActivePollTest extends FunctionalTestCase
         Dish $dish,
         array $pollResultList,
         \DateTimeInterface $timeOfRequest
-    ): PollResult {
+    ): PollResult
+    {
         $this->getContainer()->get(FakeEmployeeProvider::class)->setEmployee($employee);
         $this->getContainer()->get(FakePollProvider::class)->setPoll($poll);
         $this->getContainer()->get(FakeDishProvider::class)->setDish($dish);
@@ -206,7 +207,7 @@ class EmployeeSaveActivePollTest extends FunctionalTestCase
 
     private static function getUserWithPermissions(): User
     {
-        return new User( 1, new PermissionList([new Permission(Permission::PARTICIPATION_IN_POLLS)]));
+        return new User(1, new PermissionList([new Permission(Permission::PARTICIPATION_IN_POLLS)]));
     }
 
     private static function getUserWithNoPermissions(): User

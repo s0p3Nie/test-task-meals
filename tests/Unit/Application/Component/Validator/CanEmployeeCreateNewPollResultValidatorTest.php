@@ -1,6 +1,5 @@
 <?php
 
-
 namespace tests\Meals\Unit\Application\Component\Validator;
 
 use Meals\Application\Component\Validator\CanEmployeeCreateNewPollResultValidator;
