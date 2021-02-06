@@ -16,7 +16,7 @@ services:
       - "../:/home/app/code"
       - "${HOME}/.composer:/home/app/.composer"
       - "${HOME}/.gitconfig:/home/app/.gitconfig:ro"
-      - "${SSH_AUTH_SOCK}:/ssh-agent"
+      # - "${SSH_AUTH_SOCK}:/ssh-agent"
       - "${HOME}/.ssh/config:/home/app/.ssh/config:ro"
       - "${HOME}/.ssh/known_hosts:/home/app/.ssh/known_hosts:ro"
       - "./.history:/home/app/.history"
